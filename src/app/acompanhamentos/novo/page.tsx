@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from "react";
-import { createClient } from "@supabase/supabase-js";
 import { useRouter } from "next/navigation";
 import BottomNavigation from "@/components/BottomNavigation";
 import NavPages from "@/components/NavPages";
