@@ -38,32 +38,34 @@ function LoginPage() {
 
     // 9F3EB8 roxo
     return (
-        <div className="flex flex-col justify-content-center items-center">
+        <div className="d-flex flex-column justify-content-center align-items-center">
             
             <LogoAzulCuraBot />
 
-            <h1 className="text-2xl font-bold text-center text-gray-700">Login</h1>
+            <h2 className="text-center display-4 font-weight-bold text-muted">Login</h2>
 
-            {error && <p className="text-red-600">{error}</p>}
-            <form onSubmit={handleLogin} className="flex flex-col gap-4 w-3/4">
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="email" className="text-azul font-semibold text-2xl">Email</label>
+            {error && <p className="text-danger">{error}</p>}
+            <form onSubmit={handleLogin} className="d-flex flex-column" style={{ gap: '1rem', width: '75%' }}>
+                <div className="d-flex flex-column gap-2">
+                    <label htmlFor="email" className="text-azul-custom fw-semibold fs-4">Email</label>
                     <input
                         type="text"
                         placeholder="Insira seu email"
-                        className="border-2 border-azul rounded-xl p-1 h-[50px] text-[18px]"
+                        className="border border-azul-custom rounded p-1"
+                        style={{ height: '50px', fontSize: '18px' }}
                         id="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
                 
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="password" className="text-azul font-semibold text-2xl">Senha</label>
+                <div className="d-flex flex-column gap-2">
+                    <label htmlFor="password" className="text-azul-custom fw-semibold fs-4">Senha</label>
                     <input
                         type="password"
                         placeholder="Insira sua senha"
-                        className="border-2 border-azul rounded-xl p-1 h-[50px] text-[18px]"
+                        className="border border-azul-custom rounded p-1"
+                        style={{ height: '50px', fontSize: '18px' }}
                         id="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
@@ -73,7 +75,8 @@ function LoginPage() {
                 <button 
                 type="submit" 
                 disabled={loading}
-                className="bg-azul text-white rounded-xl p-1 text-xl h-[50px] mt-2"
+                className="bg-azul-custom text-white rounded p-1"
+                style={{ height: '50px', fontSize: '1.25rem', marginTop: '0.5rem' }}
                 >
                     {loading ? 'Entrando...' : 'Entrar'}
                 </button>

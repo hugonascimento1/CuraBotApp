@@ -8,11 +8,11 @@ interface NavPagesProps {
 
 export default function NavPages({ nome }: NavPagesProps) {
     return (
-        <div className="bg-azul w-full h-24 flex flex-row justify-start items-center gap-4 shadow-xl text-white mb-4 pl-4">
+        <div className="bg-azul-custom w-100 h-24 d-flex flex-row justify-content-start align-items-center gap-4 shadow-xl text-white mb-4 ps-4 " style={{ width: '100%', height: '96px' }}>
             <Link href={'/'}>
-                <LuChevronLeft className="text-4xl" />
+                <LuChevronLeft className="h2 text-white" />
             </Link>
-            <h1 className="text-xl">{nome}</h1>
+            <h1 className="h2">{nome}</h1>
 
         </div>
     )

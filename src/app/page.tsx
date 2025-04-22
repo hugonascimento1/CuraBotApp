@@ -48,33 +48,35 @@ export default function Home() {
   }, [router])
 
   return (
-    <div className="flex flex-col justify-content-center items-center min-h-screen">
+    <div className="d-flex flex-column justify-content-center align-items-center">
       <NavInicio />
       {/* <h1>Bem-vindo(a), {user?.email || 'Paciente'}!</h1> */}
 
-      <div className="flex flex-col w-11/12 gap-4 justify-center items-center mt-10">
+      <div className="d-flex flex-column w-75 gap-4 justify-content-center align-items-center mt-4" style={{ width: '90%' }}>
         <button
           onClick={() => router.push('/chatbot')}
-          className="bg-pink-800 hover:bg-pink-900 cursor-pointer w-full h-32 p-5 rounded-2xl text-white text-lg font-normal flex flex-row justify-center items-center gap-2"
+          className="btn-rosa-custom .btn-rosa-custom:hover w-100 h-32 p-5 rounded-2xl text-white text-lg font-normal d-flex justify-content-center align-items-center gap-2 rounded"
         >
-          <PiRobot className="w-7 h-7" />
+          <PiRobot className="w-7 h-7" style={{ width: '28px', height: '28px' }} />
           Bot Autocuidado
         </button>
 
-        <div className="flex flex-row w-full gap-4">
+        <div className="d-flex flex-row w-100 gap-4" style={{ width: '100%',  }}>
           <button
             onClick={() => router.push('/acompanhamentos/novo')}
-            className="bg-pink-800 hover:bg-pink-900 cursor-pointer w-full h-32 p-5 rounded-2xl text-white text-lg font-normal flex flex-row justify-center items-center gap-4"
+            className="btn-rosa-custom btn-rosa-custom:hover w-100 h-32 p-5 rounded text-white text-lg font-normal d-flex justify-content-center align-items-center gap-4"
+            style={{ width: '100%',  }}
           >
-            <PiCalendarPlus className="w-7 h-7" />
+            <PiCalendarPlus className="w-7 h-7" style={{ width: '28px', height: '28px' }}/>
             <p className="text-start">Novo Registro</p>
           </button>
 
           <button
             onClick={() => router.push('/acompanhamentos')}
-            className="bg-pink-800 hover:bg-pink-900 cursor-pointer w-full shadow-inner h-32 p-5 rounded-2xl text-white text-lg font-normal flex flex-row justify-center items-center gap-4"
+            className="btn-rosa-custom btn-rosa-custom:hover w-100 h-32 p-5 rounded text-white text-lg font-normal d-flex justify-content-center align-items-center gap-4"
+            style={{ width: '100%',  }}
           >
-            <PiFolderOpen className="w-7 h-7" />
+            <PiFolderOpen className="w-7 h-7" style={{ width: '28px', height: '28px' }}/>
             <p className="text-start">Ver Registros</p>
           </button>
         </div>

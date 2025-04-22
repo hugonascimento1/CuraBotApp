@@ -40,18 +40,19 @@ export default function CadastroPage() {
     };
 
     return (
-        <div className="flex flex-col justify-content-center items-center">
+        <div className="d-flex flex-column justify-content-center align-items-center">
 
             <LogoAzulCuraBot />
 
-            <h1 className="text-2xl font-bold text-center text-gray-700">Cadastre-se</h1>
+            <h2 className="text-center display-4 font-weight-bold text-muted">Cadastre-se</h2>
 
-            {error && <p className="text-red-600 text-sm italic mb-4 ">{error}</p>}
-            <form onSubmit={handleCadastro} className="flex flex-col gap-4 w-3/4">
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="email" className="text-azul font-semibold text-2xl">Email</label>
+            {error && <p className="text-danger">{error}</p>}
+            <form onSubmit={handleCadastro} className="d-flex flex-column" style={{ gap: '1rem', width: '75%' }}>
+                <div className="d-flex flex-column gap-2">
+                    <label htmlFor="email" className="text-azul-custom fw-semibold fs-4">Email</label>
                     <input
-                        className="border-2 border-azul rounded-xl p-1 h-[50px] text-[18px]"
+                        className="border border-azul-custom rounded p-1"
+                        style={{ height: '50px', fontSize: '18px' }}
                         id="email"
                         type="email"
                         placeholder="Insira seu email"
@@ -61,10 +62,11 @@ export default function CadastroPage() {
                     />
                 </div>
 
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="password" className="text-azul font-semibold text-2xl">Senha</label>
+                <div className="d-flex flex-column gap-2">
+                    <label htmlFor="password" className="text-azul-custom fw-semibold fs-4">Senha</label>
                     <input
-                        className="border-2 border-azul rounded-xl p-1 h-[50px] text-[18px]"
+                        className="border border-azul-custom rounded p-1"
+                        style={{ height: '50px', fontSize: '18px' }}
                         id="password"
                         type="password"
                         placeholder="Insira sua senha"
@@ -74,10 +76,11 @@ export default function CadastroPage() {
                     />
                 </div>
 
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="confirmPassword" className="text-azul font-semibold text-2xl">Confirmar Senha</label>
+                <div className="d-flex flex-column gap-2">
+                    <label htmlFor="confirmPassword" className="text-azul-custom fw-semibold fs-4">Confirmar Senha</label>
                     <input
-                        className="border-2 border-azul rounded-xl p-1 h-[50px] text-[18px]"
+                        className="border border-azul-custom rounded p-1"
+                        style={{ height: '50px', fontSize: '18px' }}
                         id="confirmPassword"
                         type="password"
                         placeholder="Insira sua senha"
@@ -88,7 +91,8 @@ export default function CadastroPage() {
                 </div>
 
                 <button
-                    className="bg-azul text-white rounded-xl p-1 text-xl h-[50px] mt-2"
+                    className="bg-azul-custom text-white rounded p-1"
+                    style={{ height: '50px', fontSize: '1.25rem', marginTop: '0.5rem' }}
                     type="submit"
                     disabled={loading}
                 >

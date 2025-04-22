@@ -14,17 +14,17 @@ export default function NavInicio() {
     }
 
     return (
-        <div className="bg-azul w-full flex flex-row px-4 py-4 shadow-xl h-40 justify-between items-center gap-3">
-            <div className="flex flex-col justify-center items-start gap-3">
+        <div className="bg-azul-custom w-100 d-flex flex-row p-4 shadow-lg h-40 justify-content-between align-items-center gap-3">
+            <div className="d-flex flex-column justify-content-center align-items-start gap-3">
                 <LogoBrancaCuraBot />
-                <p className="text-white text-xl">Bem-vindo(a) Paciente!</p>
+                <p className="text-white h4">Bem-vindo(a) Paciente!</p>
             </div>
 
             <button
-                className="flex flex-row gap-1 bg-transparent border-2 border-white px-4 py-2 rounded text-white cursor-pointer"
+                className="d-flex align-items-center gap-1 btn btn-outline-light px-4 py-2 rounded"
                 onClick={handleLogout}
             >
-                <BiLogOut className="w-6 h-6" />
+                <BiLogOut className="w-6 h-6" style={{ width: '28px', height: '28px' }} />
                 Sair
             </button>
 

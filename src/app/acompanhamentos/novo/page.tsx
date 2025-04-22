@@ -82,7 +82,7 @@ export default function NovoAcompanhamentoPage() {
     }
 
     return (
-        <div className="flex flex-col items-center justify-content-center">
+        <div className="d-flex flex-column align-items-center justify-content-center">
             <NavPages nome="Adicionar Acompanhamento" />
 
             <Toaster
@@ -95,14 +95,14 @@ export default function NovoAcompanhamentoPage() {
                 }}
             />
 
-            {error && <p className="text-red-600">{error}</p>}
+            {error && <p className="text-danger">{error}</p>}
 
-            <form onSubmit={handleSubmit} className="flex flex-col gap-3 justify-content-center items-center w-11/12 md:w-2/3 px-4 mt-4">
-                <div className="flex flex-row gap-3 w-full">
-                    <div className="flex flex-col gap-2 w-full">
+            <form onSubmit={handleSubmit} className="d-flex flex-column gap-2 justify-content-center align-items-center w-75 w-md-66 p-4 mt-4">
+                <div className="d-flex flex-row gap-3 w-100">
+                    <div className="d-flex flex-column gap-2 w-100">
                         <label htmlFor="surgery_date">Data da Cirurgia:</label>
                         <input
-                            className="border-2 rounded h-9"
+                            className="border border-2 rounded" style={{ height: '36px' }}
                             type="date"
                             id="surgery_date"
                             value={surgeryDate}
@@ -110,10 +110,10 @@ export default function NovoAcompanhamentoPage() {
                             required
                         />
                     </div>
-                    <div className="flex flex-col gap-2 w-full">
+                    <div className="d-flex flex-column gap-2 w-100">
                         <label htmlFor="report_date">Data de Hoje:</label>
                         <input
-                            className="border-2 rounded h-9"
+                            className="border border-2 rounded" style={{ height: '36px' }}
                             type="date"
                             id="report_date"
                             value={reportDate}
@@ -124,9 +124,9 @@ export default function NovoAcompanhamentoPage() {
                     </div>
                 </div>
 
-                <div className="flex flex-col gap-2 w-[100%]">
+                <div className="d-flex flex-column gap-2 w-100">
                     <label htmlFor="wellbeing">Bem-estar:</label>
-                    <select className="border-2 rounded h-9" id="wellbeing" value={wellbeing} onChange={(e) => setWellbeing(e.target.value)}>
+                    <select className="border border-2 rounded" style={{ height: '36px' }} id="wellbeing" value={wellbeing} onChange={(e) => setWellbeing(e.target.value)}>
                         <option value="">Selecione</option>
                         <option value="muito bem">Muito bem</option>
                         <option value="bem">Bem</option>
@@ -136,10 +136,10 @@ export default function NovoAcompanhamentoPage() {
                     </select>
                 </div>
 
-                <div className="flex flex-col gap-2 w-[100%]">
+                <div className="d-flex flex-column gap-2 w-100">
                     <label htmlFor="wound_appearance">Aparência da Ferida:</label>
                     <select
-                        className="border-2 rounded h-9"
+                        className="border border-2 rounded" style={{ height: '36px' }}
                         id="wound_appearance"
                         value={woundAppearance}
                         onChange={(e) => setWoundAppearance(e.target.value)}
@@ -153,11 +153,11 @@ export default function NovoAcompanhamentoPage() {
                     </select>
                 </div>
 
-                <div className="flex flex-row gap-3 w-full">
-                    <div className="flex flex-col gap-2 w-full">
+                <div className="d-flex flex-row gap-3 w-100">
+                    <div className="d-flex flex-column gap-2 w-100">
                         <label htmlFor="pain_level">Nível de dor (0-10):</label>
                         <select
-                            className="border-2 rounded h-9"
+                            className="border border-2 rounded" style={{ height: '36px' }}
                             id="pain_level"
                             value={painLevel}
                             onChange={(e) => setPainLevel(e.target.value === '' ? '' : parseInt(e.target.value, 10))}
@@ -171,9 +171,9 @@ export default function NovoAcompanhamentoPage() {
                         </select>
                     </div>
 
-                    <div className="flex flex-col gap-2 w-full">
+                    <div className="d-flex flex-column gap-2 w-100">
                         <label htmlFor="fever">Febre:</label>
-                        <select className="border-2 rounded h-9" id="fever" value={fever} onChange={(e) => setFever(e.target.value)}>
+                        <select className="border border-2 rounded" style={{ height: '36px' }} id="fever" value={fever} onChange={(e) => setFever(e.target.value)}>
                             <option value="">Selecione</option>
                             <option value="sim">Sim</option>
                             <option value="não">Não</option>
@@ -182,10 +182,10 @@ export default function NovoAcompanhamentoPage() {
                     </div>
                 </div>
 
-                <div className="flex flex-col gap-2 w-[100%]">
+                <div className="d-flex flex-column gap-2 w-100">
                     <label htmlFor="daily_activities">Atividades Diárias:</label>
                     <select
-                        className="border-2 rounded h-9"
+                        className="border border-2 rounded" style={{ height: '36px' }}
                         id="daily_activities"
                         value={dailyActivities}
                         onChange={(e) => setDailyActivities(e.target.value)}
@@ -197,7 +197,7 @@ export default function NovoAcompanhamentoPage() {
                     </select>
                 </div>
 
-                <button type="submit" disabled={loading} className="bg-green-800 rounded p-4 flex text-center justify-center items-center text-white mt-3 h-12">
+                <button type="submit" disabled={loading} className="bg-success rounded p-4 d-flex text-center justify-content-center align-items-center text-white mt-3" style={{ height: '3rem' }}>
                     {loading ? 'Salvando...' : 'Salvar Acompanhamento'}
                 </button>
             </form>

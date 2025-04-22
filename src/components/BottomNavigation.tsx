@@ -21,33 +21,37 @@ export default function BottomNavigation() {
     }
 
     return (
-        <div className="mt-5 flex flex-row bg-white w-full h-20 text-azul justify-content-around fixed bottom-0">
+        <div className='mt-5 d-flex flex-row bg-white w-100 h-20 text-primary justify-content-around fixed-bottom' style={{ width: '100%', height: '80px' }}>
             <Link
                 href='/'
-                className={`flex flex-col justify-center items-center w-1/4 ${isActive('/') ? 'bg-gray-200 rounded-full my-2' : 'hover:text-gray-500'}`}
+                className={`d-flex flex-column justify-content-center align-items-center ${isActive('/') ? 'bg-light rounded my-2' : 'hover:text-secondary'}` }
+                style={{ width: '25%', }}
             >
-                <PiHouse className="w-8 h-8" />
+                <PiHouse className="w-8 h-8" style={{ width: '32px', height: '32px' }} />
             </Link>
 
             <Link
                 href='/'
-                className={`flex flex-col justify-center items-center w-1/4 ${isActive('/chatbot') ? 'bg-gray-200 rounded-full my-2' : 'hover:text-gray-500'}`}
+                className={`d-flex flex-column justify-content-center align-items-center ${isActive('/chatbot') ? 'bg-light rounded my-2' : 'hover:text-secondary'}`}
+                style={{ width: '25%', }}
             >
-                <PiRobot className="w-8 h-8" />
+                <PiRobot className="w-8 h-8" style={{ width: '32px', height: '32px' }} />
             </Link>
 
             <Link
                 href='/acompanhamentos/novo'
-                className={`flex flex-col  justify-center items-center w-1/4 ${isActive('/acompanhamentos/novo') ? 'bg-gray-200 rounded-full my-2' : 'hover:text-gray-500'}`}
+                className={`d-flex flex-column justify-content-center align-items-center ${isActive('/acompanhamentos/novo') ? 'bg-light rounded my-2' : 'hover:text-secondary'}`}
+                style={{ width: '25%', }}
             >
-                <PiCalendarPlus className="w-8 h-8" />
+                <PiCalendarPlus className="w-8 h-8" style={{ width: '32px', height: '32px' }} />
             </Link>
 
             <Link
                 href='/acompanhamentos'
-                className={`flex flex-col justify-center items-center w-1/4 ${isActive('/acompanhamentos') ? 'bg-gray-200 rounded-full my-2' : 'hover:text-gray-500'}`}
+                className={`d-flex flex-column justify-content-center align-items-center ${isActive('/acompanhamentos') ? 'bg-light rounded my-2' : 'hover:text-secondary'}`}
+                style={{ width: '25%', }}
             >
-                <PiFolderOpen className="w-8 h-8" />
+                <PiFolderOpen className="w-8 h-8" style={{ width: '32px', height: '32px' }} />
             </Link>
         </div>
     )

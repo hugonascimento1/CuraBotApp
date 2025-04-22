@@ -1,10 +1,38 @@
-@import "tailwindcss";
+@import "bootstrap/dist/css/bootstrap.min.css";
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
   --azul: #4844B6;
   --roxo: #9F3EB8;
+  --rosa: #e91e63; /* Um tom de rosa padrão do Material Design */
+  --rosa-hover: #c2185b; /* Um tom mais escuro para o hover */
+}
+
+.border-azul-custom {
+  color: #4844B6;
+}
+
+.text-azul-custom {
+  color: var(--azul);
+}
+
+.text-roxo-custom {
+  color: var(--roxo);
+}
+
+.btn-rosa-custom {
+  background-color: var(--rosa);
+  color: white;
+  border: none;
+}
+
+.btn-rosa-custom:hover {
+  background-color: var(--rosa-hover);
+}
+
+.bg-azul-custom {
+  background-color: var(--azul);
 }
 
 @theme inline {

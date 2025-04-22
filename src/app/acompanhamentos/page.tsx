@@ -78,7 +78,7 @@ export default function AcompanhamentosPage() {
 
 
     return (
-        <div className="flex flex-col justify-center items-center pb-16">
+        <div className="d-flex flex-column justify-content-center align-items-center pb-4">
             <NavPages nome="Acompanhamentos" />
         
             {loading ? (
@@ -86,9 +86,9 @@ export default function AcompanhamentosPage() {
             ) : reports.length === 0 ? (
                 <p>Você ainda não registrou nenhum acompanhamento diário.</p>
             ) : (
-                <ul className="flex flex-col gap-3 w-11/12 p-1 mb-8 overflow-auto rounded-md">
+                <ul className="d-flex flex-column gap-3 w-75 p-1 mb-3 overflow-auto rounded" style={{ marginBottom: '50px' }}>
                     {reports.map((report) => (
-                        <li key={report.id} className="bg-gray-300 p-2 font-normal">
+                        <li key={report.id} className="bg-light p-2 font-weight-normal">
                             <strong>Data do Relátorio:</strong>{' '}
                             {new Date(report.report_date).toLocaleDateString('pt-BR')}
                             <p>
