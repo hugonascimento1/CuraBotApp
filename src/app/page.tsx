@@ -48,42 +48,42 @@ export default function Home() {
   }, [router])
 
   return (
-    <div className="d-flex flex-column justify-content-center align-items-center">
-      <NavInicio />
-      {/* <h1>Bem-vindo(a), {user?.email || 'Paciente'}!</h1> */}
+<div className="d-flex flex-column justify-content-center align-items-center">
+            <NavInicio />
+            {/* <h1>Bem-vindo(a), {user?.email || 'Paciente'}!</h1> */}
 
-      <div className="d-flex flex-column w-75 gap-4 justify-content-center align-items-center mt-4" style={{ width: '90%' }}>
-        <button
-          onClick={() => router.push('/chatbot')}
-          className="btn-rosa-custom .btn-rosa-custom:hover w-100 h-32 p-5 rounded-2xl text-white text-lg font-normal d-flex justify-content-center align-items-center gap-2 rounded"
-        >
-          <PiRobot className="w-7 h-7" style={{ width: '28px', height: '28px' }} />
-          Bot Autocuidado
-        </button>
+            <div className="d-flex flex-column w-75 gap-4 justify-content-center align-items-center mt-4 mb-4" style={{ width: '90%' }}>
+                <button
+                    onClick={() => router.push('/chatbot')}
+                    className="btn-rosa-custom w-100 h-32 p-5 rounded-2xl text-white text-lg font-normal d-flex justify-content-center align-items-center gap-2 rounded"
+                >
+                    <PiRobot className="w-7 h-7" style={{ width: '28px', height: '28px' }} />
+                    Bot Autocuidado
+                </button>
 
-        <div className="d-flex flex-row w-100 gap-4" style={{ width: '100%',  }}>
-          <button
-            onClick={() => router.push('/acompanhamentos/novo')}
-            className="btn-rosa-custom btn-rosa-custom:hover w-100 h-32 p-5 rounded text-white text-lg font-normal d-flex justify-content-center align-items-center gap-4"
-            style={{ width: '100%',  }}
-          >
-            <PiCalendarPlus className="w-7 h-7" style={{ width: '28px', height: '28px' }}/>
-            <p className="text-start">Novo Registro</p>
-          </button>
+                <div className="d-flex flex-row w-100 gap-4 flex-wrap" style={{ width: '100%', height: '' }}>
+                    <button
+                        onClick={() => router.push('/acompanhamentos/novo')}
+                        className="btn-rosa-custom h-32 p-5 rounded text-white text-lg font-normal d-flex justify-content-center align-items-center gap-3 flex-grow-1"
+                        style={{ }}
+                    >
+                        <PiCalendarPlus className="w-7 h-7" style={{ width: '28px', height: '28px' }}/>
+                        <p className="text-start mb-0">Novo Registro</p>
+                    </button>
 
-          <button
-            onClick={() => router.push('/acompanhamentos')}
-            className="btn-rosa-custom btn-rosa-custom:hover w-100 h-32 p-5 rounded text-white text-lg font-normal d-flex justify-content-center align-items-center gap-4"
-            style={{ width: '100%',  }}
-          >
-            <PiFolderOpen className="w-7 h-7" style={{ width: '28px', height: '28px' }}/>
-            <p className="text-start">Ver Registros</p>
-          </button>
+                    <button
+                        onClick={() => router.push('/acompanhamentos')}
+                        className="btn-rosa-custom h-32 p-5 rounded text-white text-lg font-normal d-flex justify-content-center align-items-center gap-3 flex-grow-1"
+                        style={{ }}
+                    >
+                        <PiFolderOpen className="w-7 h-7" style={{ width: '28px', height: '28px' }}/>
+                        <p className="text-start mb-0">Ver Registros</p>
+                    </button>
+                </div>
+
+            </div>
+
+            <BottomNavigation />
         </div>
-
-      </div>
-
-      <BottomNavigation />
-    </div>
   );
 }
