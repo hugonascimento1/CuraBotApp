@@ -30,7 +30,7 @@ export default function BottomNavigation() {
             </Link>
 
             <Link
-                href='/'
+                href='/chatbot'
                 className={`flex flex-col justify-center items-center w-1/4 ${isActive('/chatbot') ? 'bg-gray-200 rounded-full my-2' : 'hover:text-gray-500'}`}
             >
                 <PiRobot className="w-8 h-8" />
