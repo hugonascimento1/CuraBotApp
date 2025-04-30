@@ -31,7 +31,7 @@ export default function BottomNavigation() {
             </Link>
 
             <Link
-                href='/'
+                href='/chatbot'
                 className={`d-flex flex-column justify-content-center align-items-center ${isActive('/chatbot') ? 'bg-light rounded my-2' : 'hover:text-secondary'}`}
                 style={{ width: '25%', }}
             >
