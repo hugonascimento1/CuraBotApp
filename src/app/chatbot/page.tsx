@@ -6,8 +6,8 @@ import { Standard } from "@typebot.io/nextjs";
 
 export default function ChatbotPage() {
     
-    const typebotId = process.env.TYPEBOT_ID;
-    const typebotApiHost = process.env.TYPEBOT_APIHOST;
+    const typebotId = process.env.NEXT_PUBLIC_TYPEBOT_ID;
+    const typebotApiHost = process.env.NEXT_PUBLIC_TYPEBOT_APIHOST;
 
     return(
         <div className="bg-[#d9d9d9]">
