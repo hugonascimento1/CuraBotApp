@@ -1,20 +1,20 @@
 'use client'
 
-import { 
-  useState, 
-  useEffect, 
+import {
+  useState,
+  useEffect,
 } from "react";
 import { createClient } from "@supabase/supabase-js";
-import { 
-  usePathname, 
-  useRouter 
+import {
+  usePathname,
+  useRouter
 } from "next/navigation";
-import { 
-  PiStethoscope, 
-  PiHouse, 
-  PiRobot, 
-  PiCalendarPlus, 
-  PiFolderOpen 
+import {
+  PiStethoscope,
+  PiHouse,
+  PiRobot,
+  PiCalendarPlus,
+  PiFolderOpen
 } from "react-icons/pi";
 import BottomNavigation from "@/components/BottomNavigation";
 import NavInicio from "@/components/NavInicio";
@@ -58,10 +58,18 @@ export default function Home() {
           className="bg-pink-800 hover:bg-pink-900 cursor-pointer w-full h-32 p-5 rounded-2xl text-white text-lg font-normal flex flex-row justify-center items-center gap-2"
         >
           <PiRobot className="w-7 h-7" />
-          Bot Autocuidado
+          Curabot Acompanhamento
         </button>
 
-        <div className="flex flex-row w-full gap-4">
+        <button
+          onClick={() => router.push('/acompanhamentos')}
+          className="bg-pink-800 hover:bg-pink-900 cursor-pointer w-full shadow-inner h-32 p-5 rounded-2xl text-white text-lg font-normal flex flex-row justify-center items-center gap-4"
+        >
+          <PiFolderOpen className="w-7 h-7" />
+          <p className="text-start">Ver Acompanhamentos</p>
+        </button>
+
+        {/* <div className="flex flex-row w-full gap-4">
           <button
             onClick={() => router.push('/acompanhamentos/novo')}
             className="bg-pink-800 hover:bg-pink-900 cursor-pointer w-full h-32 p-5 rounded-2xl text-white text-lg font-normal flex flex-row justify-center items-center gap-4"
@@ -70,14 +78,8 @@ export default function Home() {
             <p className="text-start">Novo Registro</p>
           </button>
 
-          <button
-            onClick={() => router.push('/acompanhamentos')}
-            className="bg-pink-800 hover:bg-pink-900 cursor-pointer w-full shadow-inner h-32 p-5 rounded-2xl text-white text-lg font-normal flex flex-row justify-center items-center gap-4"
-          >
-            <PiFolderOpen className="w-7 h-7" />
-            <p className="text-start">Ver Registros</p>
-          </button>
-        </div>
+
+        </div> */}
 
       </div>
 

@@ -7,24 +7,21 @@ import BottomNavigation from "@/components/BottomNavigation";
 import NavPages from "@/components/NavPages";
 
 import { supabase } from "@/utils/supabaseclient";
+import ReactMarkdown from 'react-markdown';
 
-interface DailyReport {
+interface BotInteraction {
     id: string;
     user_id: string;
-    surgery_date: string;
-    report_date: string;
-    pain_level: number | null;
-    wellbeing: string | null;
-    fever: string | null;
-    wound_appearance: string | null;
-    daily_activities: string | null;
+    data_hora_interacao: string;
+    nome_procedimento: string;
+    resposta_bott: string;
+    data_procedimento: string;
     created_at: string;
-    updated_at: string;
 }
 
 export default function AcompanhamentosPage() {
     const [user, setUser] = useState<any>(null);
-    const [reports, setReports] = useState<DailyReport[]>([]);
+    const [acompanhamentos, setAcompanhamentos] = useState<BotInteraction[]>([]);
     const [loading, setLoading] = useState(true);
     const router = useRouter();
 
@@ -36,7 +33,7 @@ export default function AcompanhamentosPage() {
             if (!session?.user) {
                 router.push('/auth/login');
             } else {
-                fetchDailyReports(session.user.id);
+                fetchAcompanhamentos(session.user.id);
             }
         };
 
@@ -44,30 +41,30 @@ export default function AcompanhamentosPage() {
 
         const { data: { subscription } } = supabase.auth.onAuthStateChange(
             async (_event, session) => {
-            setUser(session?.user);
-            if (!session?.user) {
-                router.push('/auth/login');
-            } else {
-                fetchDailyReports(session.user.id);
-            }
-        });
+                setUser(session?.user);
+                if (!session?.user) {
+                    router.push('/auth/login');
+                } else {
+                    fetchAcompanhamentos(session.user.id);
+                }
+            });
 
         return () => subscription?.unsubscribe();
     }, [router]);
 
-    const fetchDailyReports = async (userId: string) => {
+    const fetchAcompanhamentos = async (userId: string) => {
         setLoading(true);
         const { data, error } = await supabase
-            .from('daily_report')
+            .from('bot_interactions')
             .select('*')
             .eq('user_id', userId)
-            .order('created_at', { ascending: false });
+            .order('data_hora_interacao', { ascending: false });
 
         if (error) {
             console.error('Erro ao buscar acompanhamentos:', error);
             // Tratar o erro adequadamente
         } else {
-            setReports(data || []);
+            setAcompanhamentos(data || []);
         }
         setLoading(false);
     };
@@ -80,46 +77,38 @@ export default function AcompanhamentosPage() {
     return (
         <div className="flex flex-col justify-center items-center pb-16">
             <NavPages nome="Acompanhamentos" />
-        
+
             {loading ? (
                 <p>Carregando acompanhamentos...</p>
-            ) : reports.length === 0 ? (
+            ) : acompanhamentos.length === 0 ? (
                 <p>Você ainda não registrou nenhum acompanhamento diário.</p>
             ) : (
                 <ul className="flex flex-col gap-3 w-11/12 p-1 mb-8 overflow-auto rounded-md">
-                    {reports.map((report) => (
-                        <li key={report.id} className="bg-gray-300 p-2 font-normal">
-                            <strong>Data do Relátorio:</strong>{' '}
-                            {new Date(report.report_date).toLocaleDateString('pt-BR')}
+                    {acompanhamentos.map((acompanhamento) => (
+                        <li key={acompanhamento.data_hora_interacao} className="bg-gray-300 p-2 font-normal">
                             <p>
-                                <strong>Data da Cirurgia:</strong>{' '}
-                                {new Date(report.surgery_date).toLocaleDateString('pt-BR')}
+                                <strong>Data do Acompanhamento:</strong>{' '}
+                                {new Date(acompanhamento.data_hora_interacao).toLocaleDateString('pt-BR', {
+                                    day: '2-digit',
+                                    month: '2-digit',
+                                    year: 'numeric',
+                                    hour: '2-digit',
+                                    minute: '2-digit',
+                                })}
                             </p>
-                            {report.pain_level !== null && (
-                                <p>
-                                    <strong>Nível de dor (0-10): </strong>{report.pain_level}
-                                </p>
-                            )}
-                            {report.wellbeing && (
-                                <p>
-                                    <strong>Bem-estar:</strong> {report.wellbeing}
-                                </p>
-                            )}
-                            {report.fever && (
-                                <p>
-                                    <strong>Teve Febre?: </strong>{report.fever}
-                                </p>
-                            )}
-                            {report.wound_appearance && (
-                                <p>
-                                    <strong>Aparência da Ferida: </strong>{report.wound_appearance}
-                                </p>
-                            )}
-                            {report.daily_activities && (
-                                <p>
-                                    <strong>Atividades Diárias: </strong>{report.daily_activities}
-                                </p>
-                            )}
+                            <p>
+                                <strong>Procedimento:</strong> {acompanhamento.nome_procedimento}
+                            </p>
+                            <p>
+                                <strong>Data do Procedimento:</strong>{' '}
+                                {new Date(acompanhamento.data_procedimento).toLocaleDateString('pt-BR')}
+                            </p>
+                            <div className="mt-2">
+                                <strong>Resposta do Bot:</strong>
+                                <div className="whitespace-pre-line">
+                                    <ReactMarkdown>{acompanhamento.resposta_bott}</ReactMarkdown>
+                                </div>
+                            </div>
                         </li>
                     ))}
                 </ul>
