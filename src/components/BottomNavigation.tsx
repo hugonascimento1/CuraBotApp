@@ -11,6 +11,7 @@ import {
     PiCalendarPlus, 
     PiFolderOpen 
 } from "react-icons/pi";
+import { RiRobot2Line } from "react-icons/ri";
 
 export default function BottomNavigation() {
     const router = useRouter();
@@ -33,7 +34,7 @@ export default function BottomNavigation() {
                 href='/chatbot'
                 className={`flex flex-col justify-center items-center w-1/3 ${isActive('/chatbot') ? 'bg-gray-200 rounded-full my-2' : 'hover:text-gray-500'}`}
             >
-                <PiRobot className="w-8 h-8" />
+                <RiRobot2Line className="w-8 h-8" />
             </Link>
 
             {/* <Link

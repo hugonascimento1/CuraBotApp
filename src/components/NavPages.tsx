@@ -8,7 +8,7 @@ interface NavPagesProps {
 
 export default function NavPages({ nome }: NavPagesProps) {
     return (
-        <div className="bg-azul w-full h-24 flex flex-row justify-start items-center gap-4 shadow-xl text-white mb-4 pl-4">
+        <div className="bg-azul w-full h-20 flex flex-row justify-start items-center gap-4 shadow-xl text-white mb-4 pl-4">
             <Link href={'/'}>
                 <LuChevronLeft className="text-4xl" />
             </Link>

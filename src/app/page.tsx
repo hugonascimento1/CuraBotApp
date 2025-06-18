@@ -20,6 +20,8 @@ import BottomNavigation from "@/components/BottomNavigation";
 import NavInicio from "@/components/NavInicio";
 
 import { supabase } from "@/utils/supabaseclient";
+import { LuBotMessageSquare } from "react-icons/lu";
+import { RiRobot2Fill, RiRobot2Line } from "react-icons/ri";
 
 export default function Home() {
   const [user, setUser] = useState<any>(null);
@@ -57,7 +59,7 @@ export default function Home() {
           onClick={() => router.push('/chatbot')}
           className="bg-pink-800 hover:bg-pink-900 cursor-pointer w-full h-32 p-5 rounded-2xl text-white text-lg font-normal flex flex-row justify-center items-center gap-2"
         >
-          <PiRobot className="w-7 h-7" />
+          <RiRobot2Line className="w-7 h-7" />
           Curabot Acompanhamento
         </button>
 
