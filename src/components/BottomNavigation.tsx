@@ -11,6 +11,7 @@ import {
     PiCalendarPlus, 
     PiFolderOpen 
 } from "react-icons/pi";
+import { RiRobot2Line } from "react-icons/ri";
 
 export default function BottomNavigation() {
     const router = useRouter();
@@ -35,16 +36,16 @@ export default function BottomNavigation() {
                 className={`d-flex flex-column justify-content-center align-items-center ${isActive('/chatbot') ? 'bg-light rounded my-2' : 'hover:text-secondary'}`}
                 style={{ width: '25%', }}
             >
-                <PiRobot className="w-8 h-8" style={{ width: '32px', height: '32px' }} />
+                <RiRobot2Line className="w-8 h-8" style={{ width: '32px', height: '32px' }} />
             </Link>
 
-            <Link
+            {/* <Link
                 href='/acompanhamentos/novo'
                 className={`d-flex flex-column justify-content-center align-items-center ${isActive('/acompanhamentos/novo') ? 'bg-light rounded my-2' : 'hover:text-secondary'}`}
                 style={{ width: '25%', }}
             >
                 <PiCalendarPlus className="w-8 h-8" style={{ width: '32px', height: '32px' }} />
-            </Link>
+            </Link> */}
 
             <Link
                 href='/acompanhamentos'
