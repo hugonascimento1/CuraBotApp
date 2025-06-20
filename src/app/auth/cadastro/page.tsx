@@ -44,7 +44,7 @@ export default function CadastroPage() {
 
             <LogoAzulCuraBot />
 
-            <h2 className="text-center display-4 font-weight-bold text-muted">Cadastre-se</h2>
+            <h2 className="text-center fs-4 fw-bold h-4">Cadastre-se</h2>
 
             {error && <p className="text-danger">{error}</p>}
             <form onSubmit={handleCadastro} className="d-flex flex-column" style={{ gap: '1rem', width: '75%' }}>
@@ -91,7 +91,7 @@ export default function CadastroPage() {
                 </div>
 
                 <button
-                    className="bg-azul-custom text-white rounded p-1"
+                    className="btn btn-azul-custom text-white rounded p-1"
                     style={{ height: '50px', fontSize: '1.25rem', marginTop: '0.5rem' }}
                     type="submit"
                     disabled={loading}

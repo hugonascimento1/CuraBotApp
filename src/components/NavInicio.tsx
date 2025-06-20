@@ -14,21 +14,19 @@ export default function NavInicio() {
     }
 
     return (
-        <div className="bg-azul-custom w-100 d-flex flex-row p-4 shadow-lg h-40 justify-content-between align-items-center gap-3">
+        <div className="bg-azul-custom w-100 d-flex flex-row px-4 py-4 shadow-lg align-items-center justify-content-between" style={{ height: '10rem' }}>
             <div className="d-flex flex-column justify-content-center align-items-start gap-3">
                 <LogoBrancaCuraBot />
-                <p className="text-white h4">Bem-vindo(a) Paciente!</p>
+                <p className="text-white fs-5 mb-0">Bem-vindo(a) Paciente!</p>
             </div>
 
             <button
-                className="d-flex align-items-center gap-1 btn btn-outline-light px-4 py-2 rounded"
+                className="d-flex flex-row align-items-center gap-2 btn btn-dark bg-transparent border border-2 border-white px-4 py-2 rounded text-white"
                 onClick={handleLogout}
             >
-                <BiLogOut className="w-6 h-6" style={{ width: '28px', height: '28px' }} />
+                <BiLogOut style={{ width: '1.5rem', height: '1.5rem' }} />
                 Sair
             </button>
-
-            {/* <h1 className="text-2xl text-white">Bem-vindo!</h1> */}
         </div>
     )
 }

@@ -53,37 +53,35 @@ export default function Home() {
       <NavInicio />
       {/* <h1>Bem-vindo(a), {user?.email || 'Paciente'}!</h1> */}
 
-      <div className="d-flex flex-column w-75 gap-4 justify-content-center align-items-center mt-4 mb-4" style={{ width: '90%' }}>
+      <div className="d-flex flex-column w-100 gap-3 justify-content-center align-items-center mt-5" style={{ maxWidth: '91.666%' }}>
         <button
           onClick={() => router.push('/chatbot')}
-          className="btn-rosa-custom w-100 h-32 p-5 rounded-2xl text-white text-lg font-normal d-flex justify-content-center align-items-center gap-2 rounded"
+          className="btn btn-rosa-custom w-100 py-5 px-4 rounded-3xl text-white fs-5 fw-normal d-flex flex-row justify-content-center align-items-center gap-2"
+          style={{ height: '128px' }}
         >
-          <RiRobot2Line className="w-7 h-7" style={{ width: '28px', height: '28px' }} />
+          <RiRobot2Line style={{ width: '28px', height: '28px' }} />
           Curabot Acompanhamento
         </button>
 
         <button
           onClick={() => router.push('/acompanhamentos')}
-          className="btn-rosa-custom h-32 p-5 rounded text-white text-lg font-normal d-flex justify-content-center align-items-center gap-3 flex-grow-1"
-          style={{}}
+          className="btn btn-rosa-custom w-100 py-5 px-4 rounded-3xl text-white fs-5 fw-normal d-flex flex-row justify-content-center align-items-center gap-3 shadow-inner"
+          style={{ height: '128px' }}
         >
-          <PiFolderOpen className="w-7 h-7" style={{ width: '28px', height: '28px' }} />
+          <PiFolderOpen style={{ width: '28px', height: '28px' }} />
           <p className="text-start mb-0">Ver Acompanhamentos</p>
         </button>
 
-        {/* <div className="d-flex flex-row w-100 gap-4 flex-wrap" style={{ width: '100%', height: '' }}>
+        {/* <div className="d-flex flex-row w-100 gap-3">
           <button
             onClick={() => router.push('/acompanhamentos/novo')}
-            className="btn-rosa-custom h-32 p-5 rounded text-white text-lg font-normal d-flex justify-content-center align-items-center gap-3 flex-grow-1"
-            style={{}}
+            className="btn btn-rosa-custom w-100 py-5 px-4 rounded-3xl text-white fs-5 fw-normal d-flex flex-row justify-content-center align-items-center gap-3"
+            style={{ height: '128px' }}
           >
-            <PiCalendarPlus className="w-7 h-7" style={{ width: '28px', height: '28px' }} />
+            <PiCalendarPlus style={{ width: '28px', height: '28px' }} />
             <p className="text-start mb-0">Novo Registro</p>
           </button>
-
-
         </div> */}
-
       </div>
 
       <BottomNavigation />

@@ -4,13 +4,17 @@
   --background: #ffffff;
   --foreground: #171717;
   --azul: #4844B6;
+  --azul-hover: #2925ae;
   --roxo: #9F3EB8;
-  --rosa: #e91e63; /* Um tom de rosa padrão do Material Design */
-  --rosa-hover: #c2185b; /* Um tom mais escuro para o hover */
+  --rosa: #e91e63;
+  /* Um tom de rosa padrão do Material Design */
+  --rosa-hover: #c2185b;
+  /* Um tom mais escuro para o hover */
 }
 
 .border-azul-custom {
-  color: #4844B6;
+  border: 3px solid var(--azul) !important;
+  border-radius: 1.5rem;
 }
 
 .text-azul-custom {
@@ -27,8 +31,18 @@
   border: none;
 }
 
+.btn-azul-custom {
+  background-color: var(--azul);
+  color: white;
+  border: none;
+}
+
 .btn-rosa-custom:hover {
   background-color: var(--rosa-hover);
+}
+
+.btn-azul-custom:hover {
+  background-color: var(--azul-hover);
 }
 
 .bg-azul-custom {

@@ -42,7 +42,7 @@ function LoginPage() {
             
             <LogoAzulCuraBot />
 
-            <h2 className="text-center display-4 font-weight-bold text-muted">Login</h2>
+            <h5 className="text-center fs-4 fw-bold h-4">Login</h5>
 
             {error && <p className="text-danger">{error}</p>}
             <form onSubmit={handleLogin} className="d-flex flex-column" style={{ gap: '1rem', width: '75%' }}>
@@ -75,7 +75,7 @@ function LoginPage() {
                 <button 
                 type="submit" 
                 disabled={loading}
-                className="bg-azul-custom text-white rounded p-1"
+                className="btn btn-azul-custom text-white rounded p-1"
                 style={{ height: '50px', fontSize: '1.25rem', marginTop: '0.5rem' }}
                 >
                     {loading ? 'Entrando...' : 'Entrar'}
