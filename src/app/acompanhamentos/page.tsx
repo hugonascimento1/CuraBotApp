@@ -58,7 +58,7 @@ export default function AcompanhamentosPage() {
             .from('bot_interactions')
             .select('*')
             .eq('user_id', userId)
-            .order('data_hora_interacao', { ascending: false });
+            .order('created_at', { ascending: false });
 
         if (error) {
             console.error('Erro ao buscar acompanhamentos:', error);
@@ -91,7 +91,7 @@ export default function AcompanhamentosPage() {
                 </div>
             ) : (
                 <ul className="flex flex-col gap-4 w-11/12 max-w-3xl mb-8">
-                    {[...acompanhamentos].reverse().map((acompanhamento) => {
+                    {acompanhamentos.map((acompanhamento) => {
 
                         // Extrair as partes da mensagem do bot
                         const mensagem = acompanhamento.resposta_bott;
