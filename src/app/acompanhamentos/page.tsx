@@ -59,7 +59,7 @@ export default function AcompanhamentosPage() {
             .from('bot_interactions')
             .select('*')
             .eq('user_id', userId)
-            .order('data_hora_interacao', { ascending: false });
+            .order('created_at', { ascending: false });
 
         if (error) {
             console.error('Erro ao buscar acompanhamentos:', error);
