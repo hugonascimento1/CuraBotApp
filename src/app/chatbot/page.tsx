@@ -44,16 +44,22 @@ export default function ChatbotPage() {
         userId: user.id,
     };
 
-    return(
-        <div className="bg-[#d9d9d9]">
+    return (
+        <div className="bg-[#d9d9d9] relative min-h-screen pb-16">
             <NavPages nome="Chatbot" />
-            <Standard 
-                typebot={typebotId}
-                apiHost={typebotApiHost}
-                style={{ width: "100%", height: "650px", marginBottom: "8px" }}
-                prefilledVariables={prefilledVariables}
-            />
-            <BottomNavigation />
+
+            <div className="h-[calc(100vh-180px)] overflow-hidden">
+                <Standard
+                    typebot={typebotId}
+                    apiHost={typebotApiHost}
+                    style={{ width: "100%", height: "110%" }}
+                    prefilledVariables={prefilledVariables}
+                />
+            </div>
+
+            <div className="fixed bottom-0 w-full">
+                <BottomNavigation />
+            </div>
         </div>
     )
 }
